@@ -23,7 +23,7 @@ jobs:
 
       - name: run tests
         continue-on-error: true
-        run: mvn test  -DbrowserType="chrome" -DheadlessExecution="true" -Dtest="autoexercise.tests.RegisterUserTestsPOM"
+        run: mvn test -DbrowserType="chrome" -DheadlessExecution="true" -Dtest="${{ github.event.inputs.testsPath }}"
 
       - name: Pubish Report
         continue-on-error: true
