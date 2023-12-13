@@ -1,0 +1,16 @@
+{
+  "Account1": {
+    "name": "test199",
+    "email": "testt11915999@test.com",
+    "password": "123456",
+    "firstName": "testt182229",
+    "lastName": "test1199",
+    "company": "gs",
+    "address1": "r1",
+    "address2": "r2",
+    "state": "egy",
+    "city": "cairo",
+    "zipcode": "cairo",
+    "mobileNumber": "0123456789"
+  }
+}
