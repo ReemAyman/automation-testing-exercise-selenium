@@ -2,6 +2,10 @@ name: E2E Tests
 
 on:
   workflow_dispatch:
+      inputs:
+        testsPath:
+          description: 'Path to Tests to be Executed'
+          default: 'google.tests.**'
 
 jobs:
     E2E_Chrome_Linux_Test:
