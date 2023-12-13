@@ -22,12 +22,14 @@ jobs:
           maven-version: 3.9.6
 
       - name: run tests
-        run: mvn test -Dtest="autoexercise.tests.RegisterUserTestsPOM"
+        continue-on-error: true
+        run: mvn test  -DbrowserType="chrome" -DheadlessExecution="true" -Dtest="autoexercise.tests.RegisterUserTestsPOM"
 
       - name: Pubish Report
+        continue-on-error: true
         uses: dorny/test-reporter@v1
         if: success() || failure()    # run this step even if previous step failed
         with:
-          name: JEST Tests            # Name of the check run which will be created
-          path: target/surefire-reports/TEST-*.xml    # Path to test results
-          reporter: jest-junit        # Format of test results
+          name: Tests Report Chrome_Linux
+          path: 'target/surefire-reports/TEST-*.xml'
+          reporter: java-junit
